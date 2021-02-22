@@ -14,7 +14,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
   color: black;
@@ -31,4 +31,55 @@ h3 {
 
 .br {
   border: 2px solid red;
+}
+.bg-r {
+  background-color: red;
+}
+.bg-y {
+  background-color: yellow;
+}
+.bg-b {
+  background-color: blueviolet;
+}
+.bg-g {
+  background-color: green;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  width: 118rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--d-c {
+    flex-direction: column;
+  }
+
+  &--jc-c {
+    justify-content: center;
+  }
+
+  &--jc-sb {
+    justify-content: space-between;
+  }
+
+  &--jc-sa {
+    justify-content: space-around;
+  }
+
+  &--ai-c {
+    align-items: center;
+  }
 }
