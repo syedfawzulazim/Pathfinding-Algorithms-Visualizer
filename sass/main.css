@@ -1,5 +1,194 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 /* Breakpoints */
+@-webkit-keyframes visitedAnimation {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+@keyframes visitedAnimation {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: rgba(0, 0, 66, 0.75);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+
+@-webkit-keyframes visitedObjectAnimation {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: rgba(41, 4, 24, 0.75);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(97, 0, 20, 0.75);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: rgba(216, 5, 141, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: rgba(178, 67, 255, 0.75);
+  }
+}
+
+@keyframes visitedObjectAnimation {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: rgba(41, 4, 24, 0.75);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(97, 0, 20, 0.75);
+  }
+  75% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: rgba(216, 5, 141, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: rgba(178, 67, 255, 0.75);
+  }
+}
+
+@-webkit-keyframes triangletwo {
+  0% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    background-color: #fffe6a;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: #fffe6a;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #fffe6a;
+  }
+}
+
+@keyframes triangletwo {
+  0% {
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    background-color: #fffe6a;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: #fffe6a;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #fffe6a;
+  }
+}
+
+@-webkit-keyframes wallAnimation {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: #0c3547;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: #0c3547;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #0c3547;
+  }
+}
+
+@keyframes wallAnimation {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    background-color: #0c3547;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: #0c3547;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: #0c3547;
+  }
+}
+
+@-webkit-keyframes specialNodes {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes specialNodes {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 html {
   font-size: 62.5%;
   -webkit-box-sizing: border-box;
@@ -46,7 +235,7 @@ h3 {
 }
 
 .bg-b {
-  background-color: blueviolet;
+  background-color: #802bb1;
 }
 
 .bg-g {
@@ -105,10 +294,6 @@ a {
           align-items: center;
 }
 
-.header {
-  background-color: #802bb1;
-}
-
 .header a {
   -webkit-transition: color 300ms ease-in;
   transition: color 300ms ease-in;
@@ -120,6 +305,8 @@ a {
 
 .header .row {
   height: 50px;
+  background-color: #802bb1;
+  border-radius: 5px;
 }
 
 .header__title a h2 {
@@ -221,5 +408,91 @@ a {
           transform: rotate(180deg);
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
+}
+
+.description ul {
+  height: 40px;
+  background-color: #e0f5f5;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.description ul div {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.description .start {
+  background-image: url("/img/icons/triangletwo-right.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+          animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+}
+
+.description .target {
+  background-image: url("/img/icons/circle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+          animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+}
+
+.description .weighted {
+  background-image: url("/img/icons/weight.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+          animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+}
+
+.description .unvisited {
+  background-color: azure;
+  border: 1px solid #afd8f8;
+}
+
+.description .visited {
+  background-color: azure;
+  border: 1px solid #afd8f8;
+  -webkit-animation: visitedAnimation 1500ms ease-in-out alternate 1 forwards running;
+          animation: visitedAnimation 1500ms ease-in-out alternate 1 forwards running;
+}
+
+.description .visitedObject {
+  background-color: azure;
+  border: 1px solid #afd8f8;
+  -webkit-animation: visitedObjectAnimation 1500ms ease-in-out alternate 1 forwards running;
+          animation: visitedObjectAnimation 1500ms ease-in-out alternate 1 forwards running;
+}
+
+.description .shortest-path {
+  background-color: azure;
+  -webkit-animation: triangletwo 1500ms ease-in-out alternate 1 forwards running;
+          animation: triangletwo 1500ms ease-in-out alternate 1 forwards running;
+}
+
+.description .wall {
+  background-color: #000;
+  -webkit-animation: wallAnimation 300ms ease-in-out alternate 1 forwards running;
+          animation: wallAnimation 300ms ease-in-out alternate 1 forwards running;
+}
+
+.selecteditems {
+  font-size: 1rem;
+}
+
+.selecteditems .row {
+  color: aliceblue;
+  padding: 5px;
+}
+
+.selecteditems .row div {
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: rgba(46, 103, 153, 0.603);
 }
 /*# sourceMappingURL=main.css.map */

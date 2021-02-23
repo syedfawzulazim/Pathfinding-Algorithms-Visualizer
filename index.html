@@ -14,7 +14,8 @@
 
 <body>
 
-    <header class="header">
+    <!-- Header Section Start -->
+    <header class="header bg-b">
         <div class="container">
             <div class="row flex flex--jc-sb flex--ai-c">
                 <div class="header__title">
@@ -27,20 +28,20 @@
                         <ul class="ul-main">
                             <li onclick="('.l1')" class="li-main l1" id="li-algo">
                                 <a class="dropdown-link" href="#">Algorithms <span class="down-arrow"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li id="" class=""><a href="#">Dijkstra's Algorithm</a></li>
-                                    <li id="" class=""><a href="#">A* Searcg</a></li>
-                                    <li id="" class=""><a href="#">Greedy Best-First Search</a></li>
-                                    <li id="" class=""><a href="#">Swarm Algorithm</a></li>
-                                    <li id="" class=""><a href="#">Convergent Swarm Algorithm</a></li>
-                                    <li id="" class=""><a href="#">Bidirectional Swarm Algorithm</a></li>
-                                    <li id="" class=""><a href="#">Breadth-First Search</a></li>
-                                    <li id="" class=""><a href="#">Depth-First Search</a></li>
+                                <ul class="dropdown-menu algo">
+                                    <li><a id="dsa" class="" href="#">Dijkstra's Algorithm</a></li>
+                                    <li><a id="astar" class="" href="#">A* Search</a></li>
+                                    <li><a id="gbfs" class="" href="#">Greedy Best-First Search</a></li>
+                                    <li><a id="" class="" href="#">Swarm Algorithm</a></li>
+                                    <li><a id="" class="" href="#">Convergent Swarm Algorithm</a></li>
+                                    <li><a id="" class="" href="#">Bidirectional Swarm Algorithm</a></li>
+                                    <li><a id="" class="" href="#">Breadth-First Search</a></li>
+                                    <li><a id="" class="" href="#">Depth-First Search</a></li>
                                 </ul>
                             </li>
                             <li onclick="('.l2')" class="li-main l2" id="li-Maze">
                                 <a class="dropdown-link" href="#">Mazes & Patterns <span class="down-arrow"></span></a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu maze">
                                     <li id="" class=""><a href="#">Recursive Division</a></li>
                                     <li id="" class=""><a href="#">Recursive Division (vertical skew)</a></li>
                                     <li id="" class=""><a href="#">Recursive Division (horizontal skew)</a></li>
@@ -55,21 +56,18 @@
                 <div class="header__config">
                     <nav class="navbar__config">
                         <ul class="ul-config ">
-                            <li>
-                                <a href="#">Clear Map</a>
+                            <li><a href="#">Clear Map</a>
                             </li>
-                            <li>
-                                <a href="#">Clear Walls</a>
+                            <li><a href="#">Clear Walls</a>
                             </li>
-                            <li>
-                                <a href="#">Clear Path</a>
+                            <li><a href="#">Clear Path</a>
                             </li>
                             <li onclick="('.l3')" class="li-main l3" id="li-speed">
                                 <a class="dropdown-link" href="#">Speed <span class="down-arrow"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li id="" class=""><a href="#">Slow</a></li>
-                                    <li id="" class=""><a href="#">Normal</a></li>
-                                    <li id="" class=""><a href="#">Fast</a></li>
+                                <ul class="dropdown-menu speed">
+                                    <li id="slow" class=""><a href="#">Slow</a></li>
+                                    <li id="normal" class=""><a href="#">Normal</a></li>
+                                    <li id="fast" class=""><a href="#">Fast</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -81,6 +79,78 @@
             </div>
         </div>
     </header>
+    <!-- Header Section End -->
+
+    <!-- Description Section Start -->
+    <section class="description bg-b">
+        <div class="container">
+            <div class="row">
+                <ul class="flex flex--jc-sb flex--ai-c">
+                    <li>
+                        <div class="start"></div>
+                        Start Node
+                    </li>
+                    <li>
+                        <div class="target"></div>
+                        Target Node
+                    </li>
+                    <li>
+                        <div class="weighted"></div>
+                        Weighted Node
+                    </li>
+                    <li>
+                        <div class="unvisited"></div>
+                        Unvisited Node
+                    </li>
+                    <li>
+                        <div class="visited"></div>
+                        <div class="visitedObject"></div>
+                        Visited Nodes
+                    </li>
+                    <li>
+                        <div class="shortest-path"></div>
+                        Shortest-path Node
+                    </li>
+                    <li>
+                        <div class="wall"></div>
+                        Wall Node
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Description Section End -->
+
+    <!-- Selected Items Start -->
+    <section class="selecteditems">
+        <div class="container">
+            <div class="row flex flex--jc-c flex-ai-c">
+                <div class="algo">
+                    <h2>Algorithm : <span id="span_algo">select one</span></h2>
+                </div>
+                <div class="maze">
+                    <h2>Mazes & Patterns : <span id="span_maze">may select one</span></h2>
+                </div>
+                <div class="speed">
+                    <h2>Speed : <span id="span_speed">Normal</span> </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Selected Items End -->
+
+    <!-- Map Section Star -->
+    <section class="map">
+        <div class="container">
+            <div class="row">
+                <table id="tableMap"></table>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section End -->
+
+
+
 
 
 
@@ -89,6 +159,7 @@
 
     <!-- Optional JavaScript -->
     <script src="/js/main.js"></script>
+    <script src="/js/map.js"></script>
 </body>
 
 </html>

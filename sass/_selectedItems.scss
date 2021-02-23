@@ -1,0 +1,13 @@
+.selecteditems {
+  font-size: 1rem;
+  .row {
+    color: aliceblue;
+    padding: 5px;
+  }
+  .row div {
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgba(46, 103, 153, 0.603);
+  }
+}

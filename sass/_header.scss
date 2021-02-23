@@ -1,6 +1,4 @@
 .header {
-  background-color: #802bb1;
-
   a {
     transition: color 300ms ease-in;
 
@@ -11,6 +9,8 @@
 
   .row {
     height: 50px;
+    background-color: #802bb1;
+    border-radius: 5px;
   }
 
   &__title {
