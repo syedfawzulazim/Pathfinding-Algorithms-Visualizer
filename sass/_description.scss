@@ -12,45 +12,45 @@
     position: relative;
     vertical-align: middle;
   }
-  .start {
-    background-image: url("/img/icons/triangletwo-right.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
-  }
-  .target {
-    background-image: url("/img/icons/circle.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
-  }
-  .weighted {
-    background-image: url("/img/icons/weight.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
-  }
-  .unvisited {
-    background-color: azure;
-    border: 1px solid rgb(175, 216, 248);
-  }
-  .visited {
-    background-color: azure;
-    border: 1px solid rgb(175, 216, 248);
-    animation: visitedAnimation 1500ms ease-in-out alternate 1 forwards running;
-  }
-  .visitedObject {
-    background-color: azure;
-    border: 1px solid rgb(175, 216, 248);
-    animation: visitedObjectAnimation 1500ms ease-in-out alternate 1 forwards
-      running;
-  }
-  .shortest-path {
-    background-color: azure;
-    animation: triangletwo 1500ms ease-in-out alternate 1 forwards running;
-  }
-  .wall {
-    background-color: #000;
-    animation: wallAnimation 300ms ease-in-out alternate 1 forwards running;
-  }
+}
+.start {
+  background-image: url("/img/icons/triangletwo-right.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+}
+.target {
+  background-image: url("/img/icons/circle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+}
+.weighted {
+  background-image: url("/img/icons/weight.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
+}
+.unvisited {
+  background-color: #fff;
+  border: 1px solid rgb(175, 216, 248);
+}
+.visited {
+  background-color: azure;
+  border: 1px solid rgb(175, 216, 248);
+  animation: visitedAnimation 1500ms ease-in-out alternate 1 forwards running;
+}
+.visitedObject {
+  background-color: azure;
+  border: 1px solid rgb(175, 216, 248);
+  animation: visitedObjectAnimation 1500ms ease-in-out alternate 1 forwards
+    running;
+}
+.shortest-path {
+  background-color: azure;
+  animation: triangletwo 1500ms ease-in-out alternate 1 forwards running;
+}
+.wall {
+  background-color: #000;
+  animation: wallAnimation 300ms ease-in-out alternate 1 forwards running;
 }

@@ -1,0 +1,15 @@
+.map {
+  #tableMap {
+    margin: 0 auto;
+    margin-top: 30px;
+    td {
+      border: 1px solid rgb(175, 216, 248);
+      width: 25px;
+      height: 25px;
+    }
+  }
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+}

@@ -425,7 +425,7 @@ a {
   vertical-align: middle;
 }
 
-.description .start {
+.start {
   background-image: url("/img/icons/triangletwo-right.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -433,7 +433,7 @@ a {
           animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
 }
 
-.description .target {
+.target {
   background-image: url("/img/icons/circle.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -441,7 +441,7 @@ a {
           animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
 }
 
-.description .weighted {
+.weighted {
   background-image: url("/img/icons/weight.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -449,32 +449,32 @@ a {
           animation: specialNodes 1500ms ease-in-out alternate 1 forwards running;
 }
 
-.description .unvisited {
-  background-color: azure;
+.unvisited {
+  background-color: #fff;
   border: 1px solid #afd8f8;
 }
 
-.description .visited {
+.visited {
   background-color: azure;
   border: 1px solid #afd8f8;
   -webkit-animation: visitedAnimation 1500ms ease-in-out alternate 1 forwards running;
           animation: visitedAnimation 1500ms ease-in-out alternate 1 forwards running;
 }
 
-.description .visitedObject {
+.visitedObject {
   background-color: azure;
   border: 1px solid #afd8f8;
   -webkit-animation: visitedObjectAnimation 1500ms ease-in-out alternate 1 forwards running;
           animation: visitedObjectAnimation 1500ms ease-in-out alternate 1 forwards running;
 }
 
-.description .shortest-path {
+.shortest-path {
   background-color: azure;
   -webkit-animation: triangletwo 1500ms ease-in-out alternate 1 forwards running;
           animation: triangletwo 1500ms ease-in-out alternate 1 forwards running;
 }
 
-.description .wall {
+.wall {
   background-color: #000;
   -webkit-animation: wallAnimation 300ms ease-in-out alternate 1 forwards running;
           animation: wallAnimation 300ms ease-in-out alternate 1 forwards running;
@@ -494,5 +494,21 @@ a {
   padding: 5px;
   border-radius: 3px;
   background-color: rgba(46, 103, 153, 0.603);
+}
+
+.map #tableMap {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.map #tableMap td {
+  border: 1px solid #afd8f8;
+  width: 25px;
+  height: 25px;
+}
+
+.map table {
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 /*# sourceMappingURL=main.css.map */
