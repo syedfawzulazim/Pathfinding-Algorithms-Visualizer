@@ -30,7 +30,7 @@ function Board(height, width) {
 
 Board.prototype.initialize = function(){
     this.createGrid();
- //   this.addEventListeners();
+    this.addEventListeners();
 }
 
 Board.prototype.createGrid = function(){
@@ -64,21 +64,54 @@ Board.prototype.createGrid = function(){
 }
 
 
+Board.prototype.addEventListeners = function(){
+    let board = this;
+    console.log(this.height);
+}
 
 
 
 
 
 
-let height = 15;
-let width = 32;
+
+
+
+
+
+
+
+
+/* 
+Table Load First Time
+*/
+
+// let w = (window.screen.availHeight % 25) +127;
+// console.log(w);
+
+
+// console.log(height);
+// console.log(width);
+
+// console.log(window.screen.availHeight);
+// console.log(window.screen.width);
+// console.log(window.screen.availWidth);
+
+
+
+
+
+// let height = Math.floor((window.screen.availHeight) / 25);
+// let width =  Math.floor((window.screen.availWidth / 25));
+
+let height = 19;
+let width = 50; 
 
 let newBoard = new Board(height, width);
 newBoard.initialize();
 
 window.onkeydown = (e) => {
     newBoard.keyDown = e.keyCode;
-        
 }
 
 window.onkeyup = (e) => {

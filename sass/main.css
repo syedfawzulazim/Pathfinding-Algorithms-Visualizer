@@ -497,14 +497,14 @@ a {
 }
 
 .map #tableMap {
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 10px auto 10px;
 }
 
 .map #tableMap td {
   border: 1px solid #afd8f8;
   width: 25px;
   height: 25px;
+  padding: 0px;
 }
 
 .map table {
