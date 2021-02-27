@@ -1,36 +1,42 @@
-
-
 function Board(height, width) {
     this.height = height;
     this.width = width;
+
     this.start = null;
     this.target = null;
     this.object = null;
-    this.boardArray = [];
+
     this.nodes = {};
+
+    this.boardArray = [];
     this.nodesToAnimate = [];
     this.objectNodesToAnimate = [];
     this.shortestPathNodesToAnimate = [];
     this.objectShortestPathNodesToAnimate = [];
     this.wallsToAnimate = [];
-    this.mouseDown = false;
+
     this.pressedNodeStatus = "normal";
     this.previouslyPressedNodeStatus = null;
     this.previouslySwitchedNode = null;
-    this.previouslySwitchedNodeWeight = 0;
-    this.keyDown = false;
-    this.algoDone = false;
     this.currentAlgorithm = null;
     this.currentHeuristic = null;
+    
+    this.previouslySwitchedNodeWeight = 0;
     this.numberOfObjects = 0;
-    this.isObject = false;
+
+    this.mouseDown = false;
+    this.keyDown = false;
+    this.algoDone = false;
     this.buttonsOn = false;
+    this.isObject = false;
+ 
     this.speed = "fast";
   }
 
 Board.prototype.initialize = function(){
     this.createGrid();
     this.addEventListeners();
+   
 }
 
 Board.prototype.createGrid = function(){
@@ -60,18 +66,56 @@ Board.prototype.createGrid = function(){
     }
     let tableMap = document.getElementById('tableMap');
     tableMap.innerHTML = tableHTML;
-    
 }
 
 
 Board.prototype.addEventListeners = function(){
     let board = this;
-    console.log(this.height);
+    for (let r = 0; r < board.height; r++) {
+      for (let c = 0; c < board.width; c++) {
+            let currentId = `${r}-${c}`;
+            let currentNode = board.getNode(currentId);
+            let currentElement = document.getElementById(currentId);
+            currentElement.onmousedown = (e) => {
+                e.preventDefault();
+                if (this.buttonsOn) {
+                    board.mouseDown = true;
+                    if(currentNode.status === "start" || currentNode.status === "target" || currentNode.status === "object"){
+                        board.pressedNodeStatus = currentNode.status;
+                    } else{
+                        board.pressedNodeStatus = "normal";
+                        board.c
+                    }
+                }
+            }
+
+      }
+        
+    }
+
+
+
+    //console.log(board);
+}
+
+Board.prototype.getNode = function(id){
+    let coordinates = id.split("-");
+    let r = parseInt(coordinates[0]);
+    let c = parseInt(coordinates[1]);
+     return this.boardArray[r][c]; 
 }
 
 
-
-
+Board.prototype.changeNormalNode = function(currrentNode){
+    let element = document.getElementById(currentNode.id);
+    let relevantStatuses = ["start", "target", "object"];
+    let unweightedAlgoritms = ["dfs", "bfs"];
+    if(!this.keyDown){
+        if(!relevantStatuses.includes(currrentNode.status)){
+            element.className = currrentNode
+        }
+    }
+}
 
 
 
@@ -105,7 +149,7 @@ Table Load First Time
 // let width =  Math.floor((window.screen.availWidth / 25));
 
 let height = 19;
-let width = 50; 
+let width = 45; 
 
 let newBoard = new Board(height, width);
 newBoard.initialize();
