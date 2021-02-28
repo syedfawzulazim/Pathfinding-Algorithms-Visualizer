@@ -112,10 +112,22 @@ Board.prototype.changeNormalNode = function(currrentNode){
     let unweightedAlgoritms = ["dfs", "bfs"];
     if(!this.keyDown){
         if(!relevantStatuses.includes(currrentNode.status)){
-            element.className = currrentNode
+            element.className = currrentNode.status !== "wall" ?
+                "wall" : "unvisited";
+            currrentNode.status = element.className !== "wall" ?
+                "unvisited" : "wall";
+            currrentNode.weight = 0;
+       }
+    }else if (this.keyDown === 87 && !unweightedAlgorithms.includes(this.currentAlgorithm)) {
+        if (!relevantStatuses.includes(currentNode.status)) {
+          element.className = currentNode.weight !== 15 ?
+            "unvisited weight" : "unvisited";
+          currentNode.weight = element.className !== "unvisited weight" ?
+            0 : 15;
+          currentNode.status = "unvisited";
         }
-    }
-}
+      }
+};
 
 
 
