@@ -106,28 +106,6 @@ Board.prototype.getNode = function(id){
 }
 
 
-Board.prototype.changeNormalNode = function(currrentNode){
-    let element = document.getElementById(currentNode.id);
-    let relevantStatuses = ["start", "target", "object"];
-    let unweightedAlgoritms = ["dfs", "bfs"];
-    if(!this.keyDown){
-        if(!relevantStatuses.includes(currrentNode.status)){
-            element.className = currrentNode.status !== "wall" ?
-                "wall" : "unvisited";
-            currrentNode.status = element.className !== "wall" ?
-                "unvisited" : "wall";
-            currrentNode.weight = 0;
-       }
-    }else if (this.keyDown === 87 && !unweightedAlgorithms.includes(this.currentAlgorithm)) {
-        if (!relevantStatuses.includes(currentNode.status)) {
-          element.className = currentNode.weight !== 15 ?
-            "unvisited weight" : "unvisited";
-          currentNode.weight = element.className !== "unvisited weight" ?
-            0 : 15;
-          currentNode.status = "unvisited";
-        }
-      }
-};
 
 
 
@@ -162,6 +140,7 @@ Table Load First Time
 
 let height = 19;
 let width = 45; 
+
 
 let newBoard = new Board(height, width);
 newBoard.initialize();
