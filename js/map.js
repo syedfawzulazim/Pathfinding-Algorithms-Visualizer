@@ -27,7 +27,7 @@ function Board(height, width) {
     this.mouseDown = false;
     this.keyDown = false;
     this.algoDone = false;
-    this.buttonsOn = false;
+    this.buttonsOn = true;
     this.isObject = false;
  
     this.speed = "fast";
@@ -36,7 +36,6 @@ function Board(height, width) {
 Board.prototype.initialize = function(){
     this.createGrid();
     this.addEventListeners();
-   
 }
 
 Board.prototype.createGrid = function(){
@@ -68,7 +67,6 @@ Board.prototype.createGrid = function(){
     tableMap.innerHTML = tableHTML;
 }
 
-
 Board.prototype.addEventListeners = function(){
     let board = this;
     for (let r = 0; r < board.height; r++) {
@@ -76,18 +74,68 @@ Board.prototype.addEventListeners = function(){
             let currentId = `${r}-${c}`;
             let currentNode = board.getNode(currentId);
             let currentElement = document.getElementById(currentId);
+           
             currentElement.onmousedown = (e) => {
                 e.preventDefault();
                 if (this.buttonsOn) {
                     board.mouseDown = true;
                     if(currentNode.status === "start" || currentNode.status === "target" || currentNode.status === "object"){
-                        board.pressedNodeStatus = currentNode.status;
+                        board.pressedNodeStatus = currentNode.status; 
                     } else{
                         board.pressedNodeStatus = "normal";
-                        board.c
+                        board.changeNormalNode(currrentNode);
                     }
                 }
             }
+
+            currentElement.onmouseup = () => {
+                if(this.buttonsOn){
+                    board.mouseDown = false;
+                    if(board.pressedNodeStatus === "target") {
+                        board.target = currentId;
+                    } else if( board.pressedNodeStatus === "start"){
+                        board.start = currentId;
+                    } else if( board.pressedNodeStatus === "object"){
+                        board.object = currentId;
+                    }
+                    board.pressedNodeStatus = "normal";
+                }
+            }
+
+            currentElement.onmouseenter = () => {
+                if (this.buttonsOn) {
+                  if (board.mouseDown && board.pressedNodeStatus !== "normal") {
+                    board.changeSpecialNode(currentNode);
+                    if (board.pressedNodeStatus === "target") {
+                      board.target = currentId;
+                      if (board.algoDone) {
+                        board.redoAlgorithm();
+                      }
+                    } else if (board.pressedNodeStatus === "start") {
+                      board.start = currentId;
+                      if (board.algoDone) {
+                        board.redoAlgorithm();
+                      }
+                    } else if (board.pressedNodeStatus === "object") {
+                      board.object = currentId;
+                      if (board.algoDone) {
+                        board.redoAlgorithm();
+                      }
+                    }
+                  } else if (board.mouseDown) {
+                    board.changeNormalNode(currentNode);
+                  }
+                }
+              }
+              currentElement.onmouseleave = () => {
+                if (this.buttonsOn) {
+                  if (board.mouseDown && board.pressedNodeStatus !== "normal") {
+                    board.changeSpecialNode(currentNode);
+                  }
+                }
+              }
+            
+
 
       }
         
@@ -96,7 +144,7 @@ Board.prototype.addEventListeners = function(){
 
 
     //console.log(board);
-}
+};
 
 Board.prototype.getNode = function(id){
     let coordinates = id.split("-");
@@ -110,7 +158,7 @@ Board.prototype.changeNormalNode = function(currrentNode){
     let element = document.getElementById(currentNode.id);
     let relevantStatuses = ["start", "target", "object"];
     let unweightedAlgoritms = ["dfs", "bfs"];
-    if(!this.keyDown){
+    if(this.buttonsOn){
         if(!relevantStatuses.includes(currrentNode.status)){
             element.className = currrentNode.status !== "wall" ?
                 "wall" : "unvisited";
@@ -118,19 +166,40 @@ Board.prototype.changeNormalNode = function(currrentNode){
                 "unvisited" : "wall";
             currrentNode.weight = 0;
        }
-    }else if (this.keyDown === 87 && !unweightedAlgorithms.includes(this.currentAlgorithm)) {
-        if (!relevantStatuses.includes(currentNode.status)) {
-          element.className = currentNode.weight !== 15 ?
-            "unvisited weight" : "unvisited";
-          currentNode.weight = element.className !== "unvisited weight" ?
-            0 : 15;
-          currentNode.status = "unvisited";
-        }
       }
+      
 };
 
 
-
+Board.prototype.changeSpecialNode = function(currentNode) {
+    let element = document.getElementById(currentNode.id), previousElement;
+    if (this.previouslySwitchedNode) previousElement = document.getElementById(this.previouslySwitchedNode.id);
+    if (currentNode.status !== "target" && currentNode.status !== "start" && currentNode.status !== "object") {
+      if (this.previouslySwitchedNode) {
+        this.previouslySwitchedNode.status = this.previouslyPressedNodeStatus;
+        previousElement.className = this.previouslySwitchedNodeWeight === 15 ?
+        "unvisited weight" : this.previouslyPressedNodeStatus;
+        this.previouslySwitchedNode.weight = this.previouslySwitchedNodeWeight === 15 ?
+        15 : 0;
+        this.previouslySwitchedNode = null;
+        this.previouslySwitchedNodeWeight = currentNode.weight;
+  
+        this.previouslyPressedNodeStatus = currentNode.status;
+        element.className = this.pressedNodeStatus;
+        currentNode.status = this.pressedNodeStatus;
+  
+        currentNode.weight = 0;
+      }
+    } else if (currentNode.status !== this.pressedNodeStatus && !this.algoDone) {
+      this.previouslySwitchedNode.status = this.pressedNodeStatus;
+      previousElement.className = this.pressedNodeStatus;
+    } else if (currentNode.status === this.pressedNodeStatus) {
+      this.previouslySwitchedNode = currentNode;
+      element.className = this.previouslyPressedNodeStatus;
+      currentNode.status = this.previouslyPressedNodeStatus;
+    }
+  };
+  
 
 
 

@@ -44,13 +44,13 @@ Select Algorithms, Mazes and Speed
 */ 
 
 let selectedAlgo = document.getElementById('span_algo');
-let divAlgo =document.querySelector('.selecteditems .row .algo');
+let divAlgo = document.querySelector('.selecteditems .row .algo');
 
 let selectedMaze = document.getElementById('span_maze');
-let divMaze =document.querySelector('.selecteditems .row .maze');
+let divMaze = document.querySelector('.selecteditems .row .maze');
 
 let selectedSpeed = document.getElementById('span_speed');
-let divSpeed =document.querySelector('.selecteditems .row .speed');
+let divSpeed = document.querySelector('.selecteditems .row .speed');
 
 dropDownMenu.forEach(element => {
    if(element.classList.contains('algo')){
@@ -73,3 +73,15 @@ dropDownMenu.forEach(element => {
     }
    }
 });
+
+
+const run = document.querySelector('.run');
+
+run.addEventListener('click', () =>{
+    if (selectedAlgo.textContent !== 'select one') {
+        
+    }
+    else{
+        alert('Please select an algorithm to run...')
+    }
+})
