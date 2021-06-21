@@ -153,8 +153,6 @@ Board.prototype.getNode = function(id){
      return this.boardArray[r][c]; 
 }
 
-
-<<<<<<< HEAD
 Board.prototype.changeNormalNode = function(currrentNode){
     let element = document.getElementById(currentNode.id);
     let relevantStatuses = ["start", "target", "object"];
@@ -170,9 +168,6 @@ Board.prototype.changeNormalNode = function(currrentNode){
       }
       
 };
-=======
->>>>>>> 2c57997199308d4b6f8ca341c13e3f05c28b14b5
-
 
 Board.prototype.changeSpecialNode = function(currentNode) {
     let element = document.getElementById(currentNode.id), previousElement;
