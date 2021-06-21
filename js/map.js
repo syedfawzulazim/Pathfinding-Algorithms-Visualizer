@@ -154,6 +154,7 @@ Board.prototype.getNode = function(id){
 }
 
 
+<<<<<<< HEAD
 Board.prototype.changeNormalNode = function(currrentNode){
     let element = document.getElementById(currentNode.id);
     let relevantStatuses = ["start", "target", "object"];
@@ -169,6 +170,8 @@ Board.prototype.changeNormalNode = function(currrentNode){
       }
       
 };
+=======
+>>>>>>> 2c57997199308d4b6f8ca341c13e3f05c28b14b5
 
 
 Board.prototype.changeSpecialNode = function(currentNode) {
@@ -231,6 +234,7 @@ Table Load First Time
 
 let height = 19;
 let width = 45; 
+
 
 let newBoard = new Board(height, width);
 newBoard.initialize();
